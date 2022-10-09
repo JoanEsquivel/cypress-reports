@@ -1,0 +1,15 @@
+{
+  "name": "cypress-artifact-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ui-regression": "cypress run --browser chrome --spec cypress/e2e/1-getting-started/**.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.9.0",
+    "cypress-mochawesome-reporter": "^3.2.3"
+  }
+}
