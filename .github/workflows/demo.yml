@@ -14,9 +14,18 @@ jobs:
         uses: cypress-io/github-action@v4 # use the explicit version number
         with:
           command: npm run ui-regression
-      - uses: actions/upload-artifact@v2
-          if: always()
-          with:
-            name: cypress-execution-report
-            path: cypress/reports/html
-            retention-days: 30
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-execution-report
+          path: cypress/reports/html
+          retention-days: 30
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: joanmedia
+          SLACK_TITLE: Regression Test
+          SLACK_MESSAGE: "New changes :rocket:"
+          SLACK_COLOR: ${{ job.status }}
