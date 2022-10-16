@@ -8,3 +8,10 @@ https://www.npmjs.com/package/cypress-mochawesome-reporter
 
 - https://www.npmjs.com/package/@shelex/cypress-allure-plugin
 - https://github.com/Shelex/cypress-allure-plugin-example
+
+### Run Cypress Allure?
+
+- Install Java 8+
+- npm run ui-regression-allure
+- npm run allure:report
+- allure open
